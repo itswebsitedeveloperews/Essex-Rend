@@ -1,0 +1,132 @@
+@import "./variables.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--white);
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--white);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(200, 90, 50, 0.45);
+  outline-offset: 3px;
+}
+
+.container {
+  width: min(100% - (var(--side-padding) * 2), var(--container));
+  margin-inline: auto;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  margin: 0;
+  font-size: clamp(32px, 3.35vw, 52px);
+  font-weight: var(--heading);
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-height: 42px;
+  padding: 12px 20px;
+  border: 1px solid transparent;
+  border-radius: 0;
+  color: var(--white);
+  background: var(--accent);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18px;
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  color: var(--accent);
+  background: var(--white);
+  border-color: var(--accent);
+}
+
+.button svg {
+  flex: 0 0 auto;
+}
+
+.icon {
+  color: var(--accent);
+  flex: 0 0 auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --side-padding: 20px;
+  }
+
+  .section-title {
+    font-size: 36px;
+  }
+}

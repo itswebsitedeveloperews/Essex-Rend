@@ -1,0 +1,916 @@
+# Essex Rend Website Rebuild
+
+I want you to rebuild the following existing WordPress/Elementor website as a clean, lightweight coded website:
+
+https://essex-rend.itsnewsite.com/
+
+## Main Goal
+
+Recreate the current website as accurately as possible, but DO NOT use WordPress, Elementor, PHP, MySQL or any WordPress plugins.
+
+The existing website is the design reference.
+
+I am NOT asking for a redesign.
+
+I want the new coded website to preserve:
+
+* Current visual design
+* Current layout
+* Section order
+* Typography
+* Font sizes
+* Font weights
+* Colours
+* Background colours
+* Images
+* Logo
+* Icons
+* Border radius
+* Buttons
+* Spacing
+* Container widths
+* Section heights
+* Image proportions
+* Header behaviour
+* Mobile navigation
+* Hover states
+* Animations/transitions
+* Responsive behaviour
+* Current written content
+
+The finished website should look as close as possible to:
+
+https://essex-rend.itsnewsite.com/
+
+Do not create a generic construction-company template.
+
+Do not replace the existing design with your own interpretation.
+
+---
+
+# 1. Inspect the Existing Website First
+
+Before building anything, inspect the complete live website:
+
+https://essex-rend.itsnewsite.com/
+
+Study the page at multiple viewport sizes.
+
+Check approximately:
+
+* 1440px desktop
+* 1200px desktop
+* 1024px tablet/desktop
+* 768px tablet
+* 430px mobile
+* 390px mobile
+
+Inspect the actual CSS/computed styles where possible rather than guessing values.
+
+Pay particular attention to:
+
+* Header layout
+* Navigation
+* Contact information
+* Hero positioning
+* Hero typography
+* Image cropping
+* Buttons
+* Decorative elements
+* Section spacing
+* Text widths
+* Cards
+* Icons
+* Grid layouts
+* Responsive stacking
+* Form design
+* Footer
+* Mobile menu
+* Hover effects
+* Scroll behaviour
+
+Match the existing website closely.
+
+---
+
+# 2. Technology
+
+Build the new website using:
+
+* Astro
+* TypeScript where useful
+* Semantic HTML5
+* Modern CSS
+* Minimal vanilla JavaScript
+* Cloudflare-compatible server functionality
+
+Do not use React unless there is a genuine requirement for a particular interactive component.
+
+Do not install a large UI framework.
+
+Do not use Bootstrap.
+
+Do not use Tailwind unless there is a very strong technical reason.
+
+Prefer clean component-level CSS and reusable global variables.
+
+The website should remain lightweight.
+
+---
+
+# 3. No WordPress Dependencies
+
+The finished project must NOT depend on:
+
+* WordPress
+* Elementor
+* Elementor Pro
+* PHP
+* MySQL
+* WordPress REST API
+* WordPress plugins
+* WordPress-hosted CSS files
+* Elementor generated CSS
+* WordPress JavaScript
+
+The new website must operate independently after the old WordPress website is removed.
+
+---
+
+# 4. Website Structure
+
+This is primarily a single-page marketing website.
+
+Break the page into clean Astro components such as:
+
+```text
+src/
+  components/
+    Header.astro
+    MobileMenu.astro
+    Hero.astro
+    Possibilities.astro
+    Benefits.astro
+    WhyEssexRend.astro
+    Services.astro
+    QuoteSection.astro
+    QuoteForm.astro
+    Footer.astro
+
+  layouts/
+    BaseLayout.astro
+
+  pages/
+    index.astro
+
+  styles/
+    global.css
+    variables.css
+
+public/
+  images/
+  icons/
+  fonts/
+```
+
+This is an example structure. Adjust it if another clean structure is better.
+
+---
+
+# 5. Preserve Existing Page Content
+
+Preserve the existing copy from the live website.
+
+The current website includes content/sections such as:
+
+### Header
+
+Contact details:
+
+07498 328113
+
+[info@essexrend.co.uk](mailto:info@essexrend.co.uk)
+
+Serving Essex, London & surrounding areas
+
+Navigation includes:
+
+* Silicon Render
+* Why Essex Rend
+* Services
+* Contact
+* Request A Quote
+
+Where these navigation items currently link to sections of the same page, preserve that behaviour with smooth anchor scrolling.
+
+---
+
+# 6. Hero Section
+
+Preserve the current hero design and content.
+
+Content includes:
+
+Silicon Render Specialists
+
+# A fresh finish.
+
+# A lasting impression.
+
+Specialist silicon rendering across Essex, London and surrounding areas.
+
+CTA:
+
+Request a quote
+
+Phone:
+
+07498 328113
+
+Reproduce the existing hero image, positioning, overlay, text placement, spacing and responsive behaviour.
+
+Do not substitute a different hero concept.
+
+---
+
+# 7. Picture the Possibilities Section
+
+Preserve the existing section:
+
+## Picture the possibilities.
+
+Including the current images and labels such as:
+
+* Fresh exteriors
+* Modern detailing
+* A finish that suits your home
+
+Also preserve the disclaimer:
+
+Illustrative finishes — not completed Essex Rend projects.
+
+Match the current image layouts, cropping, card proportions and responsive behaviour.
+
+---
+
+# 8. Benefits Section
+
+Preserve the existing section beginning with:
+
+The finish makes the difference
+
+## More than a modern exterior.
+
+A versatile finish that combines a fresh look with practical everyday benefits.
+
+Preserve the current benefits including:
+
+* Fresh exteriors
+* Low maintenance
+* Flexible finish
+* Weather resistant
+* EWI compatible
+* Breathable
+
+Match the existing icons, layout and styling.
+
+---
+
+# 9. Why Essex Rend Section
+
+Preserve the section:
+
+Why Essex Rend
+
+## Care in the details. Pride in the finish.
+
+Specialist silicon rendering, quality materials and a clean, efficient service – with clear communication from start to finish.
+
+Preserve the existing feature blocks, imagery, layout and statistics including:
+
+* Specialist workmanship
+* Clear communication
+* 15 years experience
+* Fully insured
+
+There appears to be repeated wording/headings in parts of the current website.
+
+For the first version, preserve the live website content exactly rather than rewriting marketing copy unless fixing an obvious technical formatting issue.
+
+---
+
+# 10. Services Section
+
+Preserve:
+
+OUR SERVICES
+
+## Expert solutions for every exterior.
+
+High quality workmanship, durable materials and finishes designed to protect, enhance and add value to your property.
+
+The current services include:
+
+### Silicon Render
+
+A durable, self-cleaning finish that keeps your property looking great for longer.
+
+### External Wall Insulation (EWI)
+
+Improve energy efficiency, reduce heating costs and give your home a fresh new look.
+
+### Plastering
+
+A smooth, professional finish for new builds, renovations and repairs.
+
+Preserve the existing service images and visual card treatment.
+
+Keep the same desktop and mobile layout.
+
+---
+
+# 11. Quote / Contact Section
+
+Preserve the existing contact CTA:
+
+Essex · London · Surrounding Areas
+
+## Ready to refresh your exterior?
+
+Tell us a little about your property and the finish you have in mind.
+
+The form should include:
+
+* Your name — required
+* Phone number — required
+* Email address — required
+* Property postcode — required
+* Tell us about your project
+* Send enquiry
+
+Match the existing frontend form design closely.
+
+---
+
+# 12. Form Functionality
+
+The form must actually work after the website is deployed to Cloudflare.
+
+Implement a secure Cloudflare-compatible server-side endpoint for the form.
+
+Requirements:
+
+* POST submission only
+* Server-side validation
+* Required field validation
+* Validate email address
+* Sanitize inputs
+* Reject obviously invalid submissions
+* Basic rate limiting/spam protection where practical
+* Cloudflare Turnstile support
+* Never expose API keys in client-side JavaScript
+* Display a proper loading state
+* Display a success message
+* Display useful error messages
+* Disable duplicate submissions while sending
+
+Send enquiries to:
+
+[info@essexrend.co.uk](mailto:info@essexrend.co.uk)
+
+Use environment variables for email credentials.
+
+A service such as Resend can be used for transactional email.
+
+Example environment variables:
+
+```text
+RESEND_API_KEY=
+CONTACT_TO_EMAIL=info@essexrend.co.uk
+CONTACT_FROM_EMAIL=
+TURNSTILE_SECRET_KEY=
+PUBLIC_TURNSTILE_SITE_KEY=
+```
+
+Do not commit secrets to GitHub.
+
+If email credentials have not yet been provided, fully build the endpoint and form so credentials can simply be added later.
+
+---
+
+# 13. Assets
+
+Use the existing website's real visual assets wherever possible.
+
+This includes:
+
+* Essex Rend logo
+* Hero image
+* Section images
+* Service images
+* Icons
+* Decorative assets
+
+Download/copy the required owned assets into this new project.
+
+Do NOT hotlink production images from the WordPress website.
+
+For example, do not leave final image paths pointing to:
+
+```text
+essex-rend.itsnewsite.com/wp-content/...
+```
+
+Instead store the files inside this project, for example:
+
+```text
+/public/images/
+```
+
+Use sensible filenames such as:
+
+```text
+hero-rendering.webp
+silicone-render.webp
+external-wall-insulation.webp
+plastering.webp
+```
+
+Do not replace existing website photographs with AI-generated images.
+
+Do not substitute random stock images.
+
+Preserve the actual logo.
+
+---
+
+# 14. Image Optimisation
+
+Optimise website images without visibly reducing their quality.
+
+Where appropriate:
+
+* Convert large photographs to WebP or AVIF
+* Preserve originals where required
+* Use responsive image sizes
+* Include width and height attributes
+* Lazy-load below-the-fold images
+* Do NOT lazy-load the primary hero/LCP image
+* Prevent layout shift
+
+The site should remain visually identical while loading faster than the WordPress version.
+
+---
+
+# 15. Fonts
+
+Inspect which fonts the existing website uses.
+
+Use the same fonts.
+
+Where licensing allows, self-host fonts in:
+
+```text
+/public/fonts/
+```
+
+Use modern formats such as WOFF2.
+
+Set appropriate font-display behaviour.
+
+Do not arbitrarily replace the typography with another font.
+
+---
+
+# 16. CSS Design System
+
+Create global CSS custom properties based on the current site.
+
+For example:
+
+```css
+:root {
+  --color-primary: ...;
+  --color-secondary: ...;
+  --color-accent: ...;
+  --color-background: ...;
+  --color-text: ...;
+  --color-muted: ...;
+
+  --font-heading: ...;
+  --font-body: ...;
+
+  --container-width: ...;
+  --section-spacing: ...;
+
+  --radius-small: ...;
+  --radius-medium: ...;
+  --radius-large: ...;
+}
+```
+
+Extract the real values from the live website.
+
+Do not invent a new colour palette.
+
+---
+
+# 17. Responsive Design
+
+The new site must be fully responsive.
+
+Reproduce the current responsive behaviour rather than simply making the desktop design stack vertically.
+
+Carefully check:
+
+### Desktop
+
+* navigation alignment
+* containers
+* typography
+* hero proportions
+* image layouts
+* services
+* form section
+
+### Tablet
+
+* menu behaviour
+* grid changes
+* typography scaling
+* padding
+* image proportions
+
+### Mobile
+
+* mobile menu
+* heading wrapping
+* buttons
+* touch targets
+* image cropping
+* section padding
+* card stacking
+* form fields
+* footer
+
+There must be no horizontal overflow.
+
+---
+
+# 18. Mobile Navigation
+
+If the current website changes to a hamburger/mobile menu, reproduce it.
+
+Requirements:
+
+* Accessible menu button
+* Proper aria-expanded state
+* Keyboard support
+* Escape key closes menu
+* Clicking navigation item closes menu
+* Body scroll handled correctly when menu is open
+* Smooth animation
+* Same visual treatment as the current website
+
+---
+
+# 19. Accessibility
+
+Use good accessibility practices without altering the design.
+
+Include:
+
+* Semantic headings
+* One primary H1
+* Logical heading order
+* Proper buttons vs links
+* Form labels
+* Accessible form errors
+* Keyboard navigation
+* Focus-visible states
+* ARIA only where needed
+* Meaningful alt text
+* Sufficient clickable areas
+
+Decorative images should use empty alt attributes.
+
+---
+
+# 20. SEO
+
+Preserve all useful SEO information from the current site.
+
+Inspect the current page for:
+
+* title
+* meta description
+* canonical
+* robots directives
+* Open Graph metadata
+* Twitter/social metadata
+* structured data/schema
+* favicon
+* headings
+
+Recreate appropriate metadata in the Astro site.
+
+Also create:
+
+```text
+robots.txt
+sitemap.xml
+```
+
+Use:
+
+https://essexrend.co.uk/
+
+as the intended production website URL, but define it centrally so it can easily be changed if necessary.
+
+Do not generate duplicate or conflicting canonical tags.
+
+---
+
+# 21. Performance
+
+The coded version should be considerably lighter than Elementor.
+
+Targets:
+
+* Minimal client-side JavaScript
+* No unnecessary dependencies
+* No render-blocking third-party scripts unless required
+* Optimised images
+* Proper caching
+* No console errors
+* No missing assets
+* No unnecessary font files
+* Avoid cumulative layout shift
+* Optimise LCP
+* Good Lighthouse/Core Web Vitals performance
+
+Do not sacrifice visual accuracy simply to improve a Lighthouse number.
+
+Visual accuracy comes first, followed by optimisation.
+
+---
+
+# 22. Cloudflare Deployment
+
+The final project must be ready to deploy to Cloudflare.
+
+Use the current recommended Astro + Cloudflare integration.
+
+Include the appropriate configuration such as:
+
+```text
+wrangler.jsonc
+```
+
+or the current recommended equivalent.
+
+Ensure these commands work:
+
+```bash
+npm install
+npm run dev
+npm run build
+```
+
+Also configure the appropriate Cloudflare deployment command.
+
+The website needs to work with this workflow:
+
+```text
+Replit
+   ↓
+GitHub
+   ↓
+Cloudflare
+   ↓
+essexrend.co.uk
+```
+
+A push to the production GitHub branch should be capable of triggering a Cloudflare build/deployment.
+
+---
+
+# 23. GitHub
+
+Prepare the repository properly.
+
+Include:
+
+```text
+.gitignore
+README.md
+.env.example
+```
+
+Do not commit:
+
+```text
+.env
+.env.local
+node_modules
+dist
+API keys
+Cloudflare secrets
+email credentials
+```
+
+---
+
+# 24. README
+
+Create a clear README explaining:
+
+## Local development
+
+```bash
+npm install
+npm run dev
+```
+
+## Production build
+
+```bash
+npm run build
+```
+
+## Environment variables
+
+List all required variables.
+
+## Cloudflare deployment
+
+Explain the GitHub → Cloudflare deployment setup.
+
+## Contact form
+
+Explain how email sending and Turnstile are configured.
+
+---
+
+# 25. Security Headers
+
+Configure sensible production security headers where practical, including:
+
+* X-Content-Type-Options
+* Referrer-Policy
+* Permissions-Policy
+* Content-Security-Policy where compatible
+* Strict-Transport-Security on the production HTTPS domain
+* frame-ancestors or equivalent clickjacking protection
+
+Do not add a CSP that accidentally breaks fonts, images, Turnstile or the enquiry form.
+
+---
+
+# 26. Important Restrictions
+
+Do NOT:
+
+* redesign the website
+* use a pre-made template
+* create a generic tradesman website
+* change the existing colour palette
+* replace the logo
+* use AI-generated photos
+* randomly replace existing imagery
+* rewrite all of the copy
+* use WordPress
+* use Elementor
+* use PHP
+* use a database unless absolutely required
+* build an unnecessary CMS
+* add unnecessary animations
+* add unnecessary npm packages
+* hotlink assets from the old site
+* leave Elementor classes/code in the project
+* leave WordPress URLs in production code
+
+---
+
+# 27. Visual Accuracy Check
+
+After creating the first version, compare the new site directly against:
+
+https://essex-rend.itsnewsite.com/
+
+Do not stop after generating the initial components.
+
+Perform a visual QA pass.
+
+Compare at:
+
+```text
+1440px
+1024px
+768px
+430px
+390px
+```
+
+Check:
+
+* Header height
+* Logo size
+* Navigation spacing
+* Hero height
+* Hero image crop
+* Heading line breaks
+* Font sizes
+* Font weights
+* Button dimensions
+* Container widths
+* Section padding
+* Image dimensions
+* Cards
+* Borders
+* Backgrounds
+* Icon positioning
+* Form styling
+* Footer
+* Mobile menu
+* Overall vertical rhythm
+
+Fix noticeable differences.
+
+The goal is for someone familiar with the current Elementor website to immediately recognise the new version as the same design.
+
+---
+
+# 28. Code Quality
+
+Keep the code clean and maintainable.
+
+Avoid putting the entire website into one file.
+
+Use components for logical page sections.
+
+Keep content easy to edit.
+
+Where useful, store repeating content such as benefits and services in arrays/data objects and render them through components.
+
+Use descriptive class names.
+
+Remove:
+
+* unused components
+* unused CSS
+* debug code
+* console logs
+* placeholder content
+* temporary development assets
+
+before considering the build complete.
+
+---
+
+# 29. Final Testing
+
+Before finishing, test:
+
+* Desktop
+* Tablet
+* Mobile
+* All navigation links
+* Smooth anchor scrolling
+* Telephone links
+* Email links
+* CTA buttons
+* Mobile menu
+* Contact form validation
+* Form loading state
+* Form success state
+* Form error state
+* Images
+* Fonts
+* Responsive layouts
+* Keyboard navigation
+* Build command
+* Cloudflare compatibility
+
+Run a production build and fix all build errors.
+
+---
+
+# Final Requirement
+
+The end result should be a clean coded recreation of the existing Essex Rend Elementor website.
+
+Use:
+
+**Existing website for the design**
+https://essex-rend.itsnewsite.com/
+
+**Replit for development**
+
+**GitHub for source control**
+
+**Cloudflare for production hosting**
+
+Do not redesign it.
+
+Rebuild the existing design faithfully while removing WordPress and Elementor entirely and making the website faster, cleaner and ready for Cloudflare.

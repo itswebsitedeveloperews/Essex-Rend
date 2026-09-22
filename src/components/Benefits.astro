@@ -1,0 +1,45 @@
+---
+import Icon from "./Icon.astro";
+
+const benefits = [
+  ["Fresh exteriors", "A consistent finish with lasting visual appeal.", "home"],
+  ["Low maintenance", "Less routine upkeep for your exterior.", "calendar"],
+  ["Flexible finish", "A consistent finish with lasting visual appeal.", "shield"],
+  ["Weather resistant", "A consistent finish with lasting visual appeal.", "home"],
+  ["EWI compatible", "Suitable for compatible external wall insulation systems.", "shield"],
+  ["Breathable", "Allows moisture vapour to escape.", "calendar"],
+];
+---
+
+<section class="benefits" aria-labelledby="benefits-title">
+  <div class="container">
+    <p class="eyebrow">The finish makes the difference</p>
+    <h2 class="section-title" id="benefits-title">More than a modern exterior.</h2>
+    <p class="intro">A versatile finish that combines a fresh look with practical everyday benefits.</p>
+    <div class="benefit-grid">
+      {benefits.map(([title, copy, icon]) => (
+        <article class="benefit">
+          <Icon name={icon} size={60} stroke="#c85a32" />
+          <h3>{title}</h3>
+          <p>{copy}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .benefits { padding: 82px 0 70px; background: var(--soft-gradient); text-align: center; }
+  .section-title { margin-top: 14px; }
+  .intro { margin: 14px auto 0; color: #111; font-size: 18px; line-height: 22px; }
+  .benefit-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 36px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); text-align: left; }
+  .benefit { min-height: 210px; padding: 40px 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255,255,255,.35); }
+  .benefit h3 { margin: 15px 0; font-size: 16px; }
+  .benefit p { margin: 0; color: var(--copy); font-size: 14px; }
+  @media (max-width: 767px) {
+    .benefits { padding: 54px 0 50px; }
+    .intro { font-size: 16px; line-height: 24px; }
+    .benefit-grid { grid-template-columns: 1fr; margin-top: 30px; }
+    .benefit { min-height: 0; padding: 28px 22px; }
+  }
+</style>

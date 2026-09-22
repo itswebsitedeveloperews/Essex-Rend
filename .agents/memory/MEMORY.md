@@ -1,0 +1,1 @@
+- [Astro Cloudflare runtime](astro-cloudflare-runtime.md) — use patched Astro releases and runtime Worker bindings consistently for SSR configuration.

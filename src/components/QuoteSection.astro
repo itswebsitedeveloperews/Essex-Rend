@@ -1,0 +1,146 @@
+---
+import Icon from "./Icon.astro";
+import { env } from "cloudflare:workers";
+const turnstileSiteKey = (
+  env as unknown as { PUBLIC_TURNSTILE_SITE_KEY?: string }
+).PUBLIC_TURNSTILE_SITE_KEY;
+---
+
+<section class="quote" id="contact" aria-labelledby="contact-title">
+  <div class="container quote-inner">
+    <p class="eyebrow">Essex · London · Surrounding Areas</p>
+    <h2 class="section-title" id="contact-title">Ready to refresh your exterior?</h2>
+    <p class="quote-intro">Tell us a little about your property and the finish you have in mind.</p>
+
+    <form class="quote-form" id="quote-form" novalidate>
+      <div class="form-field">
+        <label class="sr-only" for="name">Your name</label>
+        <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name*" required maxlength="100" />
+      </div>
+      <div class="form-field">
+        <label class="sr-only" for="phone">Phone number</label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Phone number*" required maxlength="40" />
+      </div>
+      <div class="form-field">
+        <label class="sr-only" for="email">Email address</label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="Email address*" required maxlength="160" />
+      </div>
+      <div class="form-field">
+        <label class="sr-only" for="postcode">Property postcode</label>
+        <input id="postcode" name="postcode" type="text" autocomplete="postal-code" placeholder="Property postcode*" required maxlength="16" />
+      </div>
+      <div class="form-field form-message">
+        <label class="sr-only" for="message">Tell us about your project</label>
+        <textarea id="message" name="message" rows="1" placeholder="Tell us about your project" maxlength="3000"></textarea>
+      </div>
+      <div class="honeypot" aria-hidden="true">
+        <label for="company">Company</label>
+        <input id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
+      </div>
+      {turnstileSiteKey && (
+        <div class="turnstile-wrap">
+          <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="light"></div>
+        </div>
+      )}
+      <div class="submit-wrap">
+        <button class="button submit-button" type="submit">
+          <span class="button-label">Send enquiry</span>
+          <Icon name="arrow" size={18} stroke="currentColor" />
+        </button>
+      </div>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="contact-links">
+      <a href="tel:+447498328113"><Icon name="phone" size={15} stroke="currentColor" />07498328113</a>
+      <a href="mailto:info@essexrend.co.uk"><Icon name="mail" size={18} stroke="currentColor" />info@essexrend.co.uk</a>
+    </div>
+  </div>
+</section>
+
+{turnstileSiteKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
+
+<script>
+  const form = document.querySelector<HTMLFormElement>("#quote-form");
+  const status = form?.querySelector<HTMLElement>(".form-status");
+  const submit = form?.querySelector<HTMLButtonElement>(".submit-button");
+  const label = form?.querySelector<HTMLElement>(".button-label");
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    if (!status || !submit || !label) return;
+
+    submit.disabled = true;
+    label.textContent = "Sending…";
+    status.textContent = "";
+    status.className = "form-status";
+
+    const data = new FormData(form);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          phone: data.get("phone"),
+          email: data.get("email"),
+          postcode: data.get("postcode"),
+          message: data.get("message"),
+          company: data.get("company"),
+          turnstileToken: data.get("cf-turnstile-response"),
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "We could not send your enquiry.");
+      form.reset();
+      status.textContent = "Thanks — your enquiry has been sent. We’ll be in touch shortly.";
+      status.classList.add("success");
+      if (window.turnstile) window.turnstile.reset();
+    } catch (error) {
+      status.textContent = error instanceof Error ? error.message : "We could not send your enquiry. Please call us instead.";
+      status.classList.add("error");
+    } finally {
+      submit.disabled = false;
+      label.textContent = "Send enquiry";
+    }
+  });
+</script>
+
+<style>
+  .quote { padding: 100px 0; background: var(--soft-gradient); text-align: center; }
+  .quote-inner { display: flex; flex-direction: column; align-items: center; }
+  .section-title { margin-top: 14px; }
+  .quote-intro { margin: 14px 0 0; color: #111; font-size: 18px; line-height: 22px; }
+  .quote-form { position: relative; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; width: 100%; margin-top: 36px; text-align: left; }
+  .form-field input, .form-field textarea { width: 100%; min-height: 54px; padding: 15px 17px; border: 1px solid var(--line); border-radius: 0; color: var(--ink); background: var(--white); font-size: 14px; transition: border-color 180ms ease, box-shadow 180ms ease; }
+  .form-field input:focus, .form-field textarea:focus { outline: 0; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(200,90,50,.12); }
+  .form-message { grid-column: 1 / -1; }
+  .form-message textarea { min-height: 80px; resize: vertical; }
+  .honeypot { position: absolute; left: -9999px; }
+  .turnstile-wrap { grid-column: 1 / -1; display: flex; justify-content: center; }
+  .submit-wrap { grid-column: 1 / -1; text-align: center; }
+  .submit-button { min-width: 170px; cursor: pointer; }
+  .submit-button:disabled { cursor: wait; opacity: .65; }
+  .form-status { grid-column: 1 / -1; min-height: 24px; margin: 0; text-align: center; font-size: 14px; }
+  .form-status.success { color: #26733a; }
+  .form-status.error { color: #9a2f1a; }
+  .contact-links { display: flex; align-items: center; justify-content: center; gap: 30px; width: 100%; margin-top: 26px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .contact-links a { display: inline-flex; align-items: center; gap: 9px; font-size: 14px; transition: color 180ms ease; }
+  .contact-links a:hover { color: var(--accent); }
+  @media (max-width: 767px) {
+    .quote { padding: 54px 0; }
+    .quote-intro { max-width: 330px; font-size: 16px; line-height: 24px; }
+    .quote-form { grid-template-columns: 1fr; margin-top: 28px; }
+    .form-message, .submit-wrap, .form-status, .turnstile-wrap { grid-column: auto; }
+    .submit-button { width: 100%; min-height: 50px; }
+    .contact-links { flex-direction: column; gap: 12px; }
+  }
+</style>
+
+<script is:inline>
+  window.turnstile = window.turnstile || undefined;
+</script>

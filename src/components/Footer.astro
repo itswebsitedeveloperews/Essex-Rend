@@ -1,0 +1,41 @@
+---
+import Icon from "./Icon.astro";
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="/images/essex-rend-logo.svg" width="136" height="86" alt="Essex Rend" loading="lazy" />
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#silicon-render">Silicon Render</a>
+        <a href="#why-essex-rend">Why Essex Rend</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="tel:+447498328113"><Icon name="phone" size={16} stroke="#c85a32" />07498 328113</a>
+        <a href="mailto:info@essexrend.co.uk"><Icon name="mail" size={18} stroke="#c85a32" />info@essexrend.co.uk</a>
+        <p>Serving Essex, London &amp; surrounding areas</p>
+      </div>
+    </div>
+    <div class="copyright">© {new Date().getFullYear()} Essex Rend. All rights reserved.</div>
+  </div>
+</footer>
+
+<style>
+  .footer { padding: 60px 0 20px; color: var(--white); background: var(--ink); }
+  .footer-main { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 60px; align-items: start; padding-bottom: 50px; }
+  .footer-brand img { width: 136px; }
+  .footer-nav, .footer-contact { display: grid; gap: 14px; }
+  .footer-nav a, .footer-contact a { transition: color 180ms ease; }
+  .footer-nav a:hover, .footer-contact a:hover { color: var(--accent); }
+  .footer-contact a { display: inline-flex; align-items: center; gap: 10px; }
+  .footer-contact p { margin: 0; color: rgba(255,255,255,.7); font-size: 12px; }
+  .copyright { padding-top: 12px; border-top: 1px solid rgba(209,209,209,.4); color: rgba(255,255,255,.7); font-size: 12px; text-align: center; }
+  @media (max-width: 767px) {
+    .footer { padding-top: 40px; }
+    .footer-main { grid-template-columns: 1fr; gap: 30px; padding-bottom: 30px; }
+  }
+</style>

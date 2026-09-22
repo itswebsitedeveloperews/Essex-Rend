@@ -1,0 +1,68 @@
+---
+import Icon from "./Icon.astro";
+const services = [
+  {
+    title: "Silicon Render",
+    copy: "A durable, self-cleaning finish that keeps your property looking great for longer.",
+    image: "/images/Silicone-render-1.webp",
+    alt: "Silicon render finish on a modern property",
+  },
+  {
+    title: "External Wall Insulation (EWI)",
+    copy: "Improve energy efficiency, reduce heating costs and give your home a fresh new look.",
+    image: "/images/External-Wall-Insulation-1.webp",
+    alt: "External wall insulation being installed",
+  },
+  {
+    title: "Plastering",
+    copy: "A smooth, professional finish for new builds, renovations and repairs.",
+    image: "/images/Plastering-1.webp",
+    alt: "Freshly plastered interior wall",
+  },
+];
+---
+
+<section class="services" id="services" aria-labelledby="services-title">
+  <div class="container">
+    <p class="eyebrow">Our services</p>
+    <h2 class="section-title" id="services-title">Expert solutions for every exterior.</h2>
+    <p class="services-intro">High quality workmanship, durable materials and finishes designed to protect, enhance and add value to your property.</p>
+    <div class="service-grid">
+      {services.map((service) => (
+        <article class="service-card">
+          <img src={service.image} width="1448" height="1086" alt={service.alt} loading="lazy" />
+          <div class="service-body">
+            <h3>{service.title}</h3>
+            <p>{service.copy}</p>
+            <a href="#contact">Learn More <Icon name="arrow" size={18} stroke="currentColor" /></a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services { padding: 100px 0; color: var(--white); background: var(--ink); text-align: center; }
+  .section-title { margin-top: 14px; }
+  .services-intro { max-width: 900px; margin: 14px auto 0; color: rgba(255,255,255,.78); font-size: 18px; }
+  .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 42px; text-align: left; }
+  .service-card { border: 1px solid rgba(255,255,255,.13); background: #303a3c; overflow: hidden; }
+  .service-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform 400ms ease; }
+  .service-card:hover img { transform: scale(1.025); }
+  .service-body { padding: 26px 26px 30px; }
+  h3 { margin: 0 0 13px; font-size: 22px; }
+  .service-body p { min-height: 48px; margin: 0 0 24px; color: rgba(255,255,255,.72); font-size: 14px; }
+  .service-body a { display: inline-flex; align-items: center; gap: 14px; color: var(--accent); font-weight: 600; transition: color 180ms ease; }
+  .service-body a:hover { color: var(--white); }
+  @media (max-width: 991px) {
+    .service-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 767px) {
+    .services { padding: 54px 0; }
+    .services-intro { font-size: 16px; }
+    .service-grid { display: flex; gap: 16px; width: calc(100vw - 20px); overflow-x: auto; scroll-snap-type: x mandatory; margin-top: 30px; padding: 0 20px 12px 0; scrollbar-width: none; }
+    .service-grid::-webkit-scrollbar { display: none; }
+    .service-card { flex: 0 0 min(82vw, 350px); scroll-snap-align: start; }
+  }
+</style>

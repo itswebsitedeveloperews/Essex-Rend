@@ -1,0 +1,35 @@
+---
+import "../styles/global.css";
+
+const {
+  title = "Essex Rend | Silicon Render Specialists",
+  description = "Specialist silicon rendering across Essex, London and surrounding areas.",
+} = Astro.props;
+
+const canonical = "https://essexrend.co.uk/";
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/png" href="/images/fevicon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${canonical}images/rendered_house_3x.webp`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <link rel="preload" as="image" href="/images/rendered_house_3x.webp" type="image/webp" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

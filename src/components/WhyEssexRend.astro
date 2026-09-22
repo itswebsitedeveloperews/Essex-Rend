@@ -1,0 +1,68 @@
+---
+import Icon from "./Icon.astro";
+const features = [
+  ["Specialist workmanship", "15 years’ experience in achieving a quality finish.", "badge"],
+  ["Clear communication", "Keep informed throughout your project.", "chat"],
+  ["Specialist workmanship", "A clean, efficient service with care at every stage.", "home"],
+];
+---
+
+<section class="why" id="why-essex-rend" aria-labelledby="why-title">
+  <div class="container why-grid">
+    <div class="why-content">
+      <p class="eyebrow">Why Essex Rend</p>
+      <h2 class="section-title" id="why-title">Care in the details.<br />Pride in the finish.</h2>
+      <p class="why-intro">Specialist silicon rendering, quality materials and a clean, efficient service – with clear communication from start to finish.</p>
+      <div class="feature-list">
+        {features.map(([title, copy, icon]) => (
+          <article>
+            <Icon name={icon} stroke="#c85a32" />
+            <div>
+              <h3>{title}</h3>
+              <p>{copy}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+      <a class="button" href="#contact">Request A Quote <Icon name="arrow" size={18} stroke="currentColor" /></a>
+    </div>
+    <div class="why-media">
+      <img src="/images/rendering_worker_3x.webp" width="1200" height="793" alt="Rendering specialist applying a clean exterior finish" loading="lazy" />
+      <div class="stat">
+        <strong>15</strong>
+        <span>years experience</span>
+      </div>
+      <div class="insured"><Icon name="shield" stroke="#c85a32" /><span>Fully insured</span></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .why { padding: 100px 0; }
+  .why-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 120px; align-items: center; }
+  .section-title { margin-top: 16px; }
+  .why-intro { max-width: 660px; margin: 22px 0 32px; color: var(--copy); font-size: 18px; }
+  .feature-list { display: grid; gap: 24px; margin-bottom: 34px; }
+  .feature-list article { display: flex; gap: 20px; align-items: flex-start; }
+  h3 { margin: 0 0 6px; font-size: 16px; }
+  .feature-list p { margin: 0; color: var(--copy); font-size: 14px; }
+  .why-media { position: relative; padding: 0 0 42px 42px; }
+  .why-media img { width: 100%; min-height: 560px; object-fit: cover; }
+  .stat { position: absolute; left: 0; bottom: 0; display: flex; align-items: center; gap: 14px; padding: 24px 30px; color: var(--white); background: var(--accent); }
+  .stat strong { font-size: 48px; line-height: 1; }
+  .stat span { max-width: 90px; font-size: 14px; line-height: 1.25; text-transform: uppercase; }
+  .insured { position: absolute; right: 24px; top: 24px; display: flex; align-items: center; gap: 10px; padding: 16px 20px; background: var(--white); font-weight: 700; box-shadow: 0 8px 30px rgba(42,51,53,.12); }
+  @media (max-width: 991px) {
+    .why { padding: 70px 0; }
+    .why-grid { grid-template-columns: 1fr; gap: 50px; }
+  }
+  @media (max-width: 767px) {
+    .why { padding: 54px 0; }
+    .why-intro { font-size: 16px; }
+    .why-media { padding: 0 0 34px 20px; }
+    .why-media img { min-height: 390px; }
+    .stat { padding: 18px 20px; }
+    .stat strong { font-size: 38px; }
+    .insured { right: 12px; top: 12px; padding: 12px 14px; font-size: 14px; }
+  }
+</style>
