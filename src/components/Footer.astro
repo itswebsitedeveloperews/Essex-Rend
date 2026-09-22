@@ -15,8 +15,8 @@ import Icon from "./Icon.astro";
         <a href="#contact">Contact</a>
       </nav>
       <div class="footer-contact">
-        <a href="tel:+447498328113"><Icon name="phone" size={16} stroke="#c85a32" />07498 328113</a>
-        <a href="mailto:info@essexrend.co.uk"><Icon name="mail" size={18} stroke="#c85a32" />info@essexrend.co.uk</a>
+        <a href="tel:+447498328113"><Icon name="phone" size={16} stroke="var(--accent)" />07498 328113</a>
+        <a href="mailto:info@essexrend.co.uk"><Icon name="mail" size={18} stroke="var(--accent)" />info@essexrend.co.uk</a>
         <p>Serving Essex, London &amp; surrounding areas</p>
       </div>
     </div>
@@ -32,8 +32,8 @@ import Icon from "./Icon.astro";
   .footer-nav a, .footer-contact a { transition: color 180ms ease; }
   .footer-nav a:hover, .footer-contact a:hover { color: var(--accent); }
   .footer-contact a { display: inline-flex; align-items: center; gap: 10px; }
-  .footer-contact p { margin: 0; color: rgba(255,255,255,.7); font-size: 12px; }
-  .copyright { padding-top: 12px; border-top: 1px solid rgba(209,209,209,.4); color: rgba(255,255,255,.7); font-size: 12px; text-align: center; }
+  .footer-contact p { margin: 0; color: var(--white-70); font-size: var(--eyebrow-font-size); }
+  .copyright { padding-top: 12px; border-top: 1px solid var(--line-40); color: var(--white-70); font-size: var(--eyebrow-font-size); text-align: center; }
   @media (max-width: 767px) {
     .footer { padding-top: 40px; }
     .footer-main { grid-template-columns: 1fr; gap: 30px; padding-bottom: 30px; }

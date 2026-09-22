@@ -52,6 +52,12 @@ const { name, size = 20, stroke = "currentColor" } = Astro.props;
     <path d="m14 20 4 4 8-9" stroke={stroke} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
   </svg>
 )}
+{name === "home-heart" && (
+  <svg width={size} height={size} viewBox="0 0 40 40" fill="none" aria-hidden="true">
+    <path d="M5 17 18 5a3 3 0 0 1 4 0l13 12v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2Z" stroke={stroke} stroke-width="2" stroke-linejoin="round" />
+    <path d="M20 29s-7-5-7-9a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 4-7 9-7 9Z" stroke={stroke} stroke-width="2" stroke-linejoin="round" />
+  </svg>
+)}
 {name === "calendar" && (
   <svg width="60" height="60" viewBox="0 0 60 60" fill="none" aria-hidden="true">
     <path d="M47.5 12.5h-35A2.5 2.5 0 0 0 10 15v32.5a2.5 2.5 0 0 0 2.5 2.5h35a2.5 2.5 0 0 0 2.5-2.5V15a2.5 2.5 0 0 0-2.5-2.5ZM20 7.5v10M40 7.5v10M10 22.5h40M20 30h5m5 0h5m5 0h5m-25 10h5m5 0h5" stroke={stroke} stroke-width="3" />

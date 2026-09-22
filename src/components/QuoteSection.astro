@@ -114,10 +114,10 @@ const turnstileSiteKey = (
   .quote { padding: 100px 0; background: var(--soft-gradient); text-align: center; }
   .quote-inner { display: flex; flex-direction: column; align-items: center; }
   .section-title { margin-top: 14px; }
-  .quote-intro { margin: 14px 0 0; color: #111; font-size: 18px; line-height: 22px; }
+  .quote-intro { margin: 14px 0 0; color: var(--black); font-size: var(--intro-font-size); line-height: 22px; }
   .quote-form { position: relative; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; width: 100%; margin-top: 36px; text-align: left; }
-  .form-field input, .form-field textarea { width: 100%; min-height: 54px; padding: 15px 17px; border: 1px solid var(--line); border-radius: 0; color: var(--ink); background: var(--white); font-size: 14px; transition: border-color 180ms ease, box-shadow 180ms ease; }
-  .form-field input:focus, .form-field textarea:focus { outline: 0; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(200,90,50,.12); }
+  .form-field input, .form-field textarea { width: 100%; min-height: 54px; padding: 15px 17px; border: 1px solid var(--line); border-radius: 0; color: var(--ink); background: var(--white); font-size: var(--small-font-size); transition: border-color 180ms ease, box-shadow 180ms ease; }
+  .form-field input:focus, .form-field textarea:focus { outline: 0; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-12); }
   .form-message { grid-column: 1 / -1; }
   .form-message textarea { min-height: 80px; resize: vertical; }
   .honeypot { position: absolute; left: -9999px; }
@@ -125,15 +125,15 @@ const turnstileSiteKey = (
   .submit-wrap { grid-column: 1 / -1; text-align: center; }
   .submit-button { min-width: 170px; cursor: pointer; }
   .submit-button:disabled { cursor: wait; opacity: .65; }
-  .form-status { grid-column: 1 / -1; min-height: 24px; margin: 0; text-align: center; font-size: 14px; }
-  .form-status.success { color: #26733a; }
-  .form-status.error { color: #9a2f1a; }
+  .form-status { grid-column: 1 / -1; min-height: 24px; margin: 0; text-align: center; font-size: var(--small-font-size); }
+  .form-status.success { color: var(--success); }
+  .form-status.error { color: var(--error); }
   .contact-links { display: flex; align-items: center; justify-content: center; gap: 30px; width: 100%; margin-top: 26px; padding-top: 24px; border-top: 1px solid var(--line); }
-  .contact-links a { display: inline-flex; align-items: center; gap: 9px; font-size: 14px; transition: color 180ms ease; }
+  .contact-links a { display: inline-flex; align-items: center; gap: 9px; font-size: var(--small-font-size); transition: color 180ms ease; }
   .contact-links a:hover { color: var(--accent); }
   @media (max-width: 767px) {
     .quote { padding: 54px 0; }
-    .quote-intro { max-width: 330px; font-size: 16px; line-height: 24px; }
+    .quote-intro { max-width: 330px; font-size: var(--body-font-size); line-height: 24px; }
     .quote-form { grid-template-columns: 1fr; margin-top: 28px; }
     .form-message, .submit-wrap, .form-status, .turnstile-wrap { grid-column: auto; }
     .submit-button { width: 100%; min-height: 50px; }

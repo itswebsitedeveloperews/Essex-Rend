@@ -18,7 +18,7 @@ body {
   color: var(--ink);
   background: var(--white);
   font-family: var(--body);
-  font-size: 16px;
+  font-size: var(--body-font-size);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -49,7 +49,7 @@ a {
 }
 
 :focus-visible {
-  outline: 3px solid rgba(200, 90, 50, 0.45);
+  outline: 3px solid var(--accent-45);
   outline-offset: 3px;
 }
 
@@ -61,7 +61,7 @@ a {
 .eyebrow {
   margin: 0;
   color: var(--accent);
-  font-size: 12px;
+  font-size: var(--eyebrow-font-size);
   font-weight: 500;
   letter-spacing: 4px;
   line-height: 15px;
@@ -70,7 +70,7 @@ a {
 
 .section-title {
   margin: 0;
-  font-size: clamp(32px, 3.35vw, 52px);
+  font-size: var(--section-title-font-size);
   font-weight: var(--heading);
   letter-spacing: -0.04em;
   line-height: 1.08;
@@ -80,14 +80,14 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 8px;
   min-height: 42px;
   padding: 12px 20px;
   border: 1px solid transparent;
   border-radius: 0;
   color: var(--white);
   background: var(--accent);
-  font-size: 15px;
+  font-size: var(--button-font-size);
   font-weight: 500;
   line-height: 18px;
   transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
@@ -127,6 +127,6 @@ a {
   }
 
   .section-title {
-    font-size: 36px;
+    font-size: var(--mobile-section-title-font-size);
   }
 }

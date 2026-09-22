@@ -45,14 +45,14 @@ const services = [
 <style>
   .services { padding: 100px 0; color: var(--white); background: var(--ink); text-align: center; }
   .section-title { margin-top: 14px; }
-  .services-intro { max-width: 900px; margin: 14px auto 0; color: rgba(255,255,255,.78); font-size: 18px; }
+  .services-intro { max-width: 900px; margin: 14px auto 0; color: var(--white-78); font-size: var(--intro-font-size); }
   .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 42px; text-align: left; }
-  .service-card { border: 1px solid rgba(255,255,255,.13); background: #303a3c; overflow: hidden; }
+  .service-card { border: 1px solid var(--white-13); background: var(--surface-card); overflow: hidden; }
   .service-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform 400ms ease; }
   .service-card:hover img { transform: scale(1.025); }
   .service-body { padding: 26px 26px 30px; }
-  h3 { margin: 0 0 13px; font-size: 22px; }
-  .service-body p { min-height: 48px; margin: 0 0 24px; color: rgba(255,255,255,.72); font-size: 14px; }
+  h3 { margin: 0 0 13px; font-size: var(--card-title-font-size); }
+  .service-body p { min-height: 48px; margin: 0 0 24px; color: var(--white-72); font-size: var(--small-font-size); }
   .service-body a { display: inline-flex; align-items: center; gap: 14px; color: var(--accent); font-weight: 600; transition: color 180ms ease; }
   .service-body a:hover { color: var(--white); }
   @media (max-width: 991px) {
@@ -60,7 +60,7 @@ const services = [
   }
   @media (max-width: 767px) {
     .services { padding: 54px 0; }
-    .services-intro { font-size: 16px; }
+    .services-intro { font-size: var(--body-font-size); }
     .service-grid { display: flex; gap: 16px; width: calc(100vw - 20px); overflow-x: auto; scroll-snap-type: x mandatory; margin-top: 30px; padding: 0 20px 12px 0; scrollbar-width: none; }
     .service-grid::-webkit-scrollbar { display: none; }
     .service-card { flex: 0 0 min(82vw, 350px); scroll-snap-align: start; }
