@@ -9,6 +9,9 @@ export default defineConfig({
     },
   }),
   site: 'https://essexrend.co.uk',
+  server: {
+    allowedHosts: ['.replit.dev', 'essex-rend.replit.app'],
+  },
   security: {
     checkOrigin: true,
   },

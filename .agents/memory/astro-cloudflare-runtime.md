@@ -20,3 +20,9 @@ Astro CLI auto-backgrounds servers in detected agent environments, while Replit 
 **Why:** An auto-backgrounded process makes the workflow appear finished or failed even when the CLI briefly reports a server URL.
 
 **How to apply:** Explicitly disable Astro's agent background mode in workflow-facing dev or preview commands.
+
+Cloudflare's Astro preview adapter takes allowed hosts from Astro's top-level server configuration, not the nested Vite preview configuration.
+
+**Why:** The adapter creates a separate Vite preview server with configFile disabled; nested Vite settings did not prevent Replit hostname rejection even though localhost returned 200.
+
+**How to apply:** Configure Astro server.allowedHosts and verify requests using the actual browser Host header, not only localhost.
