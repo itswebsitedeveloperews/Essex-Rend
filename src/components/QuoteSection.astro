@@ -115,20 +115,22 @@ const turnstileSiteKey = (
   .quote-inner { display: flex; flex-direction: column; align-items: center; }
   .section-title { margin-top: 14px; }
   .quote-intro { margin: 14px 0 0; color: var(--black); font-size: var(--intro-font-size); line-height: 22px; }
-  .quote-form { position: relative; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; width: 100%; margin-top: 36px; text-align: left; }
+  .quote-form { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; width: 100%; max-width: 1100px; margin-top: 50px; text-align: left; }
   .form-field input, .form-field textarea { width: 100%; min-height: 54px; padding: 15px 17px; border: 1px solid var(--line); border-radius: 0; color: var(--ink); background: var(--white); font-size: var(--small-font-size); transition: border-color 180ms ease, box-shadow 180ms ease; }
   .form-field input:focus, .form-field textarea:focus { outline: 0; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-12); }
   .form-message { grid-column: 1 / -1; }
-  .form-message textarea { min-height: 80px; resize: vertical; }
+  .form-message textarea { display: block; min-height: 54px; resize: vertical; }
   .honeypot { position: absolute; left: -9999px; }
   .turnstile-wrap { grid-column: 1 / -1; display: flex; justify-content: center; }
-  .submit-wrap { grid-column: 1 / -1; text-align: center; }
-  .submit-button { min-width: 170px; cursor: pointer; }
+  .submit-wrap { grid-column: 1 / -1; margin-top: 34px; text-align: center; }
+  .submit-button { min-width: 210px; cursor: pointer; }
   .submit-button:disabled { cursor: wait; opacity: .65; }
   .form-status { grid-column: 1 / -1; min-height: 24px; margin: 0; text-align: center; font-size: var(--small-font-size); }
+  .form-status:empty { display: none; }
   .form-status.success { color: var(--success); }
   .form-status.error { color: var(--error); }
-  .contact-links { display: flex; align-items: center; justify-content: center; gap: 30px; width: 100%; margin-top: 26px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .contact-links { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .contact-links a + a { padding-left: 12px; border-left: 1px solid var(--line); }
   .contact-links a { display: inline-flex; align-items: center; gap: 9px; font-size: var(--small-font-size); transition: color 180ms ease; }
   .contact-links a:hover { color: var(--accent); }
   @media (max-width: 767px) {
@@ -138,6 +140,7 @@ const turnstileSiteKey = (
     .form-message, .submit-wrap, .form-status, .turnstile-wrap { grid-column: auto; }
     .submit-button { width: 100%; min-height: 50px; }
     .contact-links { flex-direction: column; gap: 12px; }
+    .contact-links a + a { padding-left: 0; border-left: 0; }
   }
 </style>
 

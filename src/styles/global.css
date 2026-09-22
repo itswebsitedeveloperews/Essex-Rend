@@ -95,9 +95,9 @@ a {
 
 .button:hover,
 .button:focus-visible {
-  color: var(--accent);
-  background: var(--white);
-  border-color: var(--accent);
+  color: var(--white);
+  background: var(--ink);
+  border-color: var(--ink);
 }
 
 .button svg {
