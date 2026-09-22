@@ -46,8 +46,10 @@ const items = [
     figure img { height: auto; aspect-ratio: .82; }
     .disclaimer { max-width: 430px; margin-top: 20px; font-size: var(--eyebrow-font-size); }
   }
+  @media (max-width: 700px) {
+    .possibilities { padding-top: 0; }
+  }
   @media (max-width: 480px) {
-    .possibilities { padding-top: 30px; }
     h2 { font-size: var(--mobile-heading-font-size); }
     figure { flex-basis: 100%; }
     figure img { height: auto; aspect-ratio: .8; }

@@ -49,6 +49,9 @@ const benefits = [
     .benefit:nth-child(2n) { border-right: 0; }
     .benefit:nth-last-child(-n + 2) { border-bottom: 0; }
   }
+  @media (max-width: 700px) {
+    .benefits { padding-top: 0; }
+  }
   @media (max-width: 560px) {
     .benefit-grid { grid-template-columns: 1fr; }
     .benefit, .benefit:nth-child(odd), .benefit:nth-child(3n) { border-right: 0; border-bottom: 1px solid var(--line); }
