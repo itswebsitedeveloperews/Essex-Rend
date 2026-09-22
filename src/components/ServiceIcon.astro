@@ -1,0 +1,14 @@
+---
+const { index } = Astro.props;
+---
+<svg width="44" height="44" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+  {index === 0 && <path d="M12 28.5 32 11l20 17.5V53H12V28.5Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round" />}
+  {index === 1 && <>
+    <path d="m32 8 20 10-20 10L12 18 32 8Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round" />
+    <path d="m12 29 20 10 20-10M12 40l20 10 20-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  </>}
+  {index === 2 && <>
+    <path d="M39 10 53 24 29 48 15 50l2-14L39 10Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round" />
+    <path d="m34 15 14 14M18 37l9 9" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+  </>}
+</svg>

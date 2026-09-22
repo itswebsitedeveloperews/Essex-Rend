@@ -1,5 +1,6 @@
 ---
 import Icon from "./Icon.astro";
+import ServiceIcon from "./ServiceIcon.astro";
 const services = [
   {
     title: "Silicon Render",
@@ -17,7 +18,7 @@ const services = [
     title: "Plastering",
     copy: "A smooth, professional finish for new builds, renovations and repairs.",
     image: "/images/Plastering-1.webp",
-    alt: "Freshly plastered interior wall",
+    alt: "Specialist applying a smooth finish to an exterior wall",
   },
 ];
 ---
@@ -28,11 +29,14 @@ const services = [
     <h2 class="section-title" id="services-title">Expert solutions for every exterior.</h2>
     <p class="services-intro">High quality workmanship, durable materials and finishes designed to protect, enhance and add value to your property.</p>
     <div class="service-grid">
-      {services.map((service) => (
+      {services.map((service, index) => (
         <article class="service-card">
           <img src={service.image} width="1448" height="1086" alt={service.alt} loading="lazy" />
           <div class="service-body">
-            <h3>{service.title}</h3>
+            <div class="service-heading">
+              <span class="service-icon"><ServiceIcon index={index} /></span>
+              <h3>{service.title}</h3>
+            </div>
             <p>{service.copy}</p>
             <a href="#contact">Learn More <Icon name="arrow" size={18} stroke="currentColor" /></a>
           </div>
@@ -43,18 +47,19 @@ const services = [
 </section>
 
 <style>
-  .services { padding: 100px 0; color: var(--white); background: var(--ink); text-align: center; }
+  .services { padding: 44px 0 70px; color: var(--ink); background: var(--white); text-align: center; }
   .section-title { margin-top: 14px; }
-  .services-intro { max-width: 900px; margin: 14px auto 0; color: var(--white-78); font-size: var(--intro-font-size); }
+  .services-intro { margin: 14px auto 0; color: var(--black); font-size: var(--intro-font-size); }
   .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 42px; text-align: left; }
-  .service-card { border: 1px solid var(--white-13); background: var(--surface-card); overflow: hidden; }
-  .service-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform 400ms ease; }
-  .service-card:hover img { transform: scale(1.025); }
-  .service-body { padding: 26px 26px 30px; }
-  h3 { margin: 0 0 13px; font-size: var(--card-title-font-size); }
-  .service-body p { min-height: 48px; margin: 0 0 24px; color: var(--white-72); font-size: var(--small-font-size); }
-  .service-body a { display: inline-flex; align-items: center; gap: 14px; color: var(--accent); font-weight: 600; transition: color 180ms ease; }
-  .service-body a:hover { color: var(--white); }
+  .service-card { border: 1px solid var(--soft); background: var(--white); overflow: hidden; }
+  .service-card img { width: 100%; height: auto; aspect-ratio: 1.58; object-fit: cover; }
+  .service-body { padding: 18px 20px 20px; }
+  .service-heading { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+  .service-icon { display: inline-flex; flex-shrink: 0; color: var(--service-icon-color); }
+  h3 { margin: 0; font-size: var(--body-lead-font-size); line-height: 1.3; }
+  .service-body p { min-height: 48px; margin: 0 0 16px; color: var(--copy); font-size: var(--body-font-size); }
+  .service-body a { display: inline-flex; align-items: center; gap: 16px; color: var(--accent); font-size: var(--small-font-size); font-weight: 500; transition: color 180ms ease; }
+  .service-body a:hover { color: var(--accent-dark); text-decoration: underline; }
   @media (max-width: 991px) {
     .service-grid { grid-template-columns: repeat(2, 1fr); }
   }
