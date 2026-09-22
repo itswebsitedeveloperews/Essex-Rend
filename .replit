@@ -36,11 +36,15 @@ localPort = 9229
 externalPort = 80
 exposeLocalhost = true
 
+[[ports]]
+localPort = 9230
+externalPort = 3001
+
 [postMerge]
 path = "scripts/post-merge.sh"
 timeoutMs = 180000
 
 [deployment]
 deploymentTarget = "autoscale"
-run = ["npm", "run", "preview"]
+run = ["npm", "run", "start"]
 build = ["npm", "run", "build"]
