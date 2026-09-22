@@ -39,7 +39,7 @@
   --mobile-heading-font-size: 28px;
   --mobile-section-title-font-size: 36px;
   --hero-font-size: clamp(64px, 5.2vw, 100px);
-  --mobile-hero-font-size: clamp(48px, 13vw, 58px);
+  --mobile-hero-font-size: 36px;
   --section-title-font-size: clamp(32px, 3.35vw, 52px);
   --heading-font-size: clamp(36px, 2.75vw, 52px);
   --container: 1560px;
