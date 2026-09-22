@@ -2,40 +2,58 @@
 import Icon from "./Icon.astro";
 ---
 
-<footer class="footer">
+<footer class="footer" id="footer">
   <div class="container">
     <div class="footer-main">
-      <div class="footer-brand">
+      <a class="footer-brand" href="#silicon-render" aria-label="Essex Rend home">
         <img src="/images/essex-rend-logo.svg" width="136" height="86" alt="Essex Rend" loading="lazy" />
-      </div>
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="#silicon-render">Silicon Render</a>
-        <a href="#why-essex-rend">Why Essex Rend</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      </a>
       <div class="footer-contact">
-        <a href="tel:+447498328113"><Icon name="phone" size={16} stroke="var(--accent)" />07498 328113</a>
+        <a href="tel:+447498328113"><Icon name="phone" size={20} stroke="var(--accent)" />07498328113</a>
         <a href="mailto:info@essexrend.co.uk"><Icon name="mail" size={18} stroke="var(--accent)" />info@essexrend.co.uk</a>
-        <p>Serving Essex, London &amp; surrounding areas</p>
+      </div>
+      <div class="footer-address">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 10c0 5-7 12-7 12S5 15 5 10a7 7 0 1 1 14 0Z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg>
+        <div>
+          <h2>Registered address</h2>
+          <address>Systems House, Office 4, 1st Floor<br />5 Horndon Industrial Park<br />West Horndon, CM13 3XL</address>
+        </div>
+      </div>
+      <div class="footer-social" aria-label="Social media">
+        <span role="img" aria-label="Instagram" title="Instagram — profile link not provided">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </span>
+        <span role="img" aria-label="Facebook" title="Facebook — profile link not provided">
+          <svg width="20" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 22v-9h3l.5-4H14V7c0-1.2.3-2 2-2h2V1.5c-.5-.1-1.6-.2-3-.2-3 0-5 1.8-5 5.2V9H7v4h3v9Z"/></svg>
+        </span>
       </div>
     </div>
-    <div class="copyright">© {new Date().getFullYear()} Essex Rend. All rights reserved.</div>
+    <div class="copyright">© Web design by <a href="https://webdesignessex.io/" target="_blank" rel="noopener noreferrer">Web Design Essex</a></div>
   </div>
 </footer>
 
 <style>
-  .footer { padding: 60px 0 20px; color: var(--white); background: var(--ink); }
-  .footer-main { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 60px; align-items: start; padding-bottom: 50px; }
-  .footer-brand img { width: 136px; }
-  .footer-nav, .footer-contact { display: grid; gap: 14px; }
-  .footer-nav a, .footer-contact a { transition: color 180ms ease; }
-  .footer-nav a:hover, .footer-contact a:hover { color: var(--accent); }
+  .footer { padding: 80px 0 18px; color: var(--white); background: var(--ink); }
+  .footer-main { display: grid; grid-template-columns: 1fr 1fr 1.4fr .6fr; gap: 40px; align-items: start; padding-bottom: 40px; }
+  .footer-brand { justify-self: start; }
+  .footer-brand img { width: 136px; height: auto; }
+  .footer-contact { display: grid; gap: 8px; font-size: var(--body-font-size); font-weight: 500; }
+  .footer a { transition: color 180ms ease; }
+  .footer a:hover, .footer a:focus-visible { color: var(--accent); }
   .footer-contact a { display: inline-flex; align-items: center; gap: 10px; }
-  .footer-contact p { margin: 0; color: var(--white-70); font-size: var(--eyebrow-font-size); }
-  .copyright { padding-top: 12px; border-top: 1px solid var(--line-40); color: var(--white-70); font-size: var(--eyebrow-font-size); text-align: center; }
+  .footer-address { display: flex; align-items: flex-start; gap: 8px; }
+  .footer-address > svg { color: var(--accent); flex-shrink: 0; }
+  .footer-address h2 { margin: 0 0 4px; font-size: var(--body-font-size); font-weight: 500; }
+  .footer-address address { font-style: normal; font-size: var(--small-font-size); line-height: 1.4; color: var(--white-70); }
+  .footer-social { display: flex; justify-content: flex-end; gap: 12px; color: var(--accent); }
+  .copyright { padding-top: 12px; border-top: 1px solid var(--line-40); color: var(--white-70); font-size: var(--small-font-size); text-align: center; }
+  @media (min-width: 768px) and (max-width: 1100px) {
+    .footer-main { grid-template-columns: 1fr 1fr; gap: 30px; }
+    .footer-social { justify-content: flex-start; }
+  }
   @media (max-width: 767px) {
     .footer { padding-top: 40px; }
     .footer-main { grid-template-columns: 1fr; gap: 30px; padding-bottom: 30px; }
+    .footer-social { justify-content: flex-start; }
   }
 </style>
