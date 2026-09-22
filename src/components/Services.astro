@@ -60,14 +60,18 @@ const services = [
   .service-body p { min-height: 48px; margin: 0 0 16px; color: var(--copy); font-size: var(--body-font-size); }
   .service-body a { display: inline-flex; align-items: center; gap: 16px; color: var(--accent); font-size: var(--button-font-size); font-weight: 500; transition: color 180ms ease; }
   .service-body a:hover, .service-body a:focus-visible { color: var(--ink); }
-  @media (max-width: 991px) {
+  @media (max-width: 1024px) {
     .service-grid { grid-template-columns: repeat(2, 1fr); }
   }
-  @media (max-width: 767px) {
+  @media (max-width: 700px) {
     .services { padding: 54px 0; }
     .services-intro { font-size: var(--body-font-size); }
     .service-grid { display: flex; gap: 16px; width: calc(100vw - 20px); overflow-x: auto; scroll-snap-type: x mandatory; margin-top: 30px; padding: 0 20px 12px 0; scrollbar-width: none; }
     .service-grid::-webkit-scrollbar { display: none; }
     .service-card { flex: 0 0 min(82vw, 350px); scroll-snap-align: start; }
+  }
+  @media (max-width: 360px) {
+    .service-grid { width: calc(100vw - 20px); }
+    .service-card { flex-basis: 280px; }
   }
 </style>

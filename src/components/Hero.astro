@@ -22,10 +22,15 @@ import Icon from "./Icon.astro";
   .hero-actions { display: flex; align-items: center; gap: 18px; margin-top: 34px; }
   .phone-link { display: inline-flex; align-items: center; gap: 12px; padding: 12px 14px; font-weight: 500; transition: color 180ms ease; }
   .phone-link:hover { color: var(--accent); }
-  @media (max-width: 767px) {
-    .hero { padding: 44px 0 48px; }
-    h1 { margin-top: 15px; font-size: var(--mobile-hero-font-size); line-height: 1.02; }
+  @media (max-width: 1024px) {
+    .hero { padding: clamp(38px, 7vw, 58px) 0 clamp(44px, 8vw, 76px); }
+    h1 { margin-top: 15px; font-size: clamp(48px, 8vw, 76px); line-height: 1.02; }
     .hero-copy { max-width: 340px; font-size: var(--body-font-size); line-height: 24px; }
     .hero-actions { flex-direction: column; gap: 4px; margin-top: 28px; }
+  }
+  @media (max-width: 480px) {
+    .hero h1 { max-width: 330px; font-size: var(--mobile-hero-font-size); }
+    .hero-copy { max-width: 310px; }
+    .hero-actions .button { width: min(100%, 260px); }
   }
 </style>

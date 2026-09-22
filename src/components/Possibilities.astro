@@ -34,13 +34,20 @@ const items = [
   figure img { width: 100%; height: clamp(320px, 31vw, 500px); object-fit: cover; }
   figcaption { margin-top: 16px; font-size: var(--intro-font-size); font-weight: 700; }
   .disclaimer { margin: 0 auto; text-align: center; color: var(--muted-text); font-size: var(--small-font-size); }
-  @media (max-width: 767px) {
+  @media (max-width: 1024px) {
     .possibilities { padding: 34px 0 50px; overflow: hidden; }
     .heading-rule { align-items: flex-end; gap: 12px; }
     h2 { max-width: 290px; font-size: var(--mobile-heading-font-size); }
-    .possibilities-grid { display: flex; gap: 16px; width: max-content; margin: 30px 0 20px; padding-right: 20px; overflow: visible; }
-    figure { width: min(82vw, 345px); }
-    figure img { height: 350px; }
+    .possibilities-grid { display: flex; gap: 16px; width: calc(100vw - max(20px, (100vw - 1560px) / 2)); margin: 30px 0 20px; padding-right: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+    .possibilities-grid::-webkit-scrollbar { display: none; }
+    figure { width: min(76vw, 520px); flex: 0 0 min(76vw, 520px); scroll-snap-align: start; }
+    figure img { height: clamp(280px, 44vw, 430px); }
     .disclaimer { max-width: 330px; font-size: var(--eyebrow-font-size); }
+  }
+  @media (max-width: 480px) {
+    .possibilities { padding-top: 30px; }
+    h2 { font-size: var(--mobile-heading-font-size); }
+    figure { width: min(82vw, 345px); flex-basis: min(82vw, 345px); }
+    figure img { height: 350px; }
   }
 </style>

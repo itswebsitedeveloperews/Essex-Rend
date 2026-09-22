@@ -87,7 +87,7 @@ import Icon from "./Icon.astro";
     }
   });
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 991) closeMenu();
+    if (window.innerWidth > 1024) closeMenu();
   });
 </script>
 
@@ -110,7 +110,7 @@ import Icon from "./Icon.astro";
   .header-quote:hover, .header-quote:focus-visible { color: var(--accent); background: var(--white); border-color: var(--white); }
   .menu-toggle, .mobile-menu { display: none; }
 
-  @media (max-width: 991px) {
+  @media (max-width: 1024px) {
     .utility { display: none; }
     .navigation-inner { height: 82px; grid-template-columns: 1fr auto; }
     .logo img { width: 104px; }
@@ -119,10 +119,15 @@ import Icon from "./Icon.astro";
     .menu-close-icon { display: none; }
     .menu-toggle[aria-expanded="true"] .menu-open-icon { display: none; }
     .menu-toggle[aria-expanded="true"] .menu-close-icon { display: block; }
-    .mobile-menu { position: fixed; inset: 82px 0 0; display: flex; flex-direction: column; align-items: stretch; padding: 28px 20px; color: var(--white); background: var(--ink); transform: translateX(100%); opacity: 0; visibility: hidden; transition: transform 240ms ease, opacity 240ms ease, visibility 240ms; }
+    .mobile-menu { position: fixed; inset: 82px 0 0; display: flex; flex-direction: column; align-items: stretch; padding: 22px max(20px, calc((100vw - 1560px) / 2)); color: var(--white); background: var(--ink); transform: translateX(100%); opacity: 0; visibility: hidden; overflow-y: auto; transition: transform 240ms ease, opacity 240ms ease, visibility 240ms; }
     .mobile-menu[aria-hidden="false"] { transform: translateX(0); opacity: 1; visibility: visible; }
-    .mobile-menu > a { padding: 16px 4px; border-bottom: 1px solid var(--white-16); font-size: var(--body-lead-font-size); font-weight: 600; }
+    .mobile-menu > a { min-height: 56px; display: flex; align-items: center; padding: 14px 4px; border-bottom: 1px solid var(--white-16); font-size: var(--body-lead-font-size); font-weight: 600; }
     .mobile-menu > a:hover { color: var(--accent); }
     .mobile-contact { display: grid; gap: 10px; margin-top: 30px; color: var(--white-75); font-size: var(--small-font-size); }
+  }
+  @media (max-width: 360px) {
+    .navigation-inner { height: 74px; }
+    .mobile-menu { inset: 74px 0 0; }
+    .logo img { width: 94px; }
   }
 </style>

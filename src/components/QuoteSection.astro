@@ -133,7 +133,7 @@ const turnstileSiteKey = (
   .contact-links a + a { padding-left: 12px; border-left: 1px solid var(--line); }
   .contact-links a { display: inline-flex; align-items: center; gap: 9px; font-size: var(--body-font-size); font-weight: 500; transition: color 180ms ease; }
   .contact-links a:hover { color: var(--accent); }
-  @media (max-width: 767px) {
+  @media (max-width: 700px) {
     .quote { padding: 54px 0; }
     .quote-intro { max-width: 330px; font-size: var(--body-font-size); line-height: 24px; }
     .quote-form { grid-template-columns: 1fr; margin-top: 28px; }
@@ -141,6 +141,10 @@ const turnstileSiteKey = (
     .submit-button { width: 100%; min-height: 50px; }
     .contact-links { flex-direction: column; gap: 12px; }
     .contact-links a + a { padding-left: 0; border-left: 0; }
+  }
+  @media (max-width: 360px) {
+    .quote-form { gap: 11px; }
+    .form-field input, .form-field textarea { padding-inline: 14px; }
   }
 </style>
 

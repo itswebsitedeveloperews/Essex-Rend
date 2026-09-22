@@ -21,6 +21,7 @@ body {
   font-size: var(--body-font-size);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 body.menu-open {
@@ -56,6 +57,13 @@ a {
 .container {
   width: min(100% - (var(--side-padding) * 2), var(--container));
   margin-inline: auto;
+}
+
+main,
+section,
+footer,
+header {
+  min-width: 0;
 }
 
 .eyebrow {
@@ -128,5 +136,9 @@ a {
 
   .section-title {
     font-size: var(--mobile-section-title-font-size);
+  }
+
+  .container {
+    width: min(100% - 40px, var(--container));
   }
 }

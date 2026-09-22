@@ -39,11 +39,19 @@ const benefits = [
   .benefit-icon { display: inline-flex; color: var(--accent); vertical-align: top; }
   .benefit h3 { margin: 15px 0; font-size: var(--body-font-size); }
   .benefit p { margin: 0; color: var(--muted-text); font-size: var(--small-font-size); }
-  @media (max-width: 767px) {
+  @media (max-width: 1024px) {
     .benefits { padding: 54px 0 50px; }
     .intro { font-size: var(--body-font-size); line-height: 24px; }
-    .benefit-grid { grid-template-columns: 1fr; margin-top: 30px; }
+    .benefit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 30px; }
     .benefit { min-height: 0; padding: 28px 22px; border-right: 0; border-bottom: 1px solid var(--line); }
+    .benefit:nth-child(odd) { border-right: 1px solid var(--line); }
+    .benefit:nth-child(3n) { border-right: 1px solid var(--line); }
+    .benefit:nth-child(2n) { border-right: 0; }
+    .benefit:nth-last-child(-n + 2) { border-bottom: 0; }
+  }
+  @media (max-width: 560px) {
+    .benefit-grid { grid-template-columns: 1fr; }
+    .benefit, .benefit:nth-child(odd), .benefit:nth-child(3n) { border-right: 0; border-bottom: 1px solid var(--line); }
     .benefit:last-child { border-bottom: 0; }
   }
 </style>

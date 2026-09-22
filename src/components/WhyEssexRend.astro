@@ -57,15 +57,18 @@ const features = [
   .insured { display: flex; align-items: center; gap: 8px; font-size: var(--small-font-size); }
   .insured :global(svg) { width: 18px; height: 18px; flex-shrink: 0; }
   .feature-list :global(svg) { width: 56px; height: 56px; flex-shrink: 0; }
-  @media (max-width: 991px) {
+  @media (max-width: 1024px) {
     .why { padding: 70px 0; }
-    .why-grid { grid-template-columns: 1fr; gap: 50px; }
+    .why-grid { grid-template-columns: minmax(0, 1fr) minmax(280px, .8fr); gap: clamp(34px, 6vw, 80px); }
   }
-  @media (max-width: 767px) {
+  @media (max-width: 700px) {
     .why { padding: 54px 0; }
+    .why-grid { grid-template-columns: 1fr; gap: 34px; }
     .why-intro { margin-bottom: 24px; }
     .why-media img { height: auto; }
     .stat { padding: 18px 20px; }
     .feature-list { margin-bottom: 32px; }
+    .why-media { order: 2; }
+    .why-actions { gap: 20px; }
   }
 </style>
