@@ -29,8 +29,11 @@ import Icon from "./Icon.astro";
     .hero-actions { flex-direction: column; gap: 4px; margin-top: 28px; }
   }
   @media (max-width: 480px) {
+    .hero { padding: 32px 0 40px; }
     .hero h1 { max-width: 330px; font-size: var(--mobile-hero-font-size); }
     .hero-copy { max-width: 310px; }
-    .hero-actions .button { width: min(100%, 260px); }
+    .hero-actions { flex-direction: row; gap: 8px; margin-top: 28px; }
+    .hero-actions .button { width: auto; padding-inline: 14px; }
+    .phone-link { gap: 8px; padding: 12px 0; font-size: var(--small-font-size); white-space: nowrap; }
   }
 </style>
