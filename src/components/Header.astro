@@ -112,10 +112,11 @@ import Icon from "./Icon.astro";
 
   @media (max-width: 1024px) {
     .utility { display: none; }
+    .navigation { padding: 6px 0; }
     .navigation-inner { height: 82px; grid-template-columns: 1fr auto; }
     .logo img { width: 104px; }
     .desktop-nav, .header-quote { display: none; }
-    .menu-toggle { display: grid; place-items: center; width: 48px; height: 48px; padding: 0; border: 0; color: var(--white); background: transparent; cursor: pointer; }
+    .menu-toggle { display: flex; align-items: center; justify-content: end; width: 48px; height: 48px; padding: 0; border: 0; color: var(--white); background: transparent; cursor: pointer; }
     .menu-close-icon { display: none; }
     .menu-toggle[aria-expanded="true"] .menu-open-icon { display: none; }
     .menu-toggle[aria-expanded="true"] .menu-close-icon { display: block; }
