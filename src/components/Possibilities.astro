@@ -1,4 +1,5 @@
 ---
+import ResponsiveCarousel from "./ResponsiveCarousel.astro";
 const items = [
   { image: "/images/rendered_house_3x.webp", width: 1200, height: 800, label: "Fresh exteriors", alt: "Freshly rendered detached house exterior" },
   { image: "/images/modern_rendered_extension_3x.webp", width: 1200, height: 800, label: "Modern detailing", alt: "Modern rendered home extension" },
@@ -7,12 +8,12 @@ const items = [
 ---
 
 <section class="possibilities" aria-labelledby="possibilities-title">
-  <div class="container">
+  <div class="container" data-carousel>
     <div class="heading-rule">
       <h2 id="possibilities-title">Picture the possibilities.</h2>
       <span aria-hidden="true"></span>
     </div>
-    <div class="possibilities-grid">
+    <div class="possibilities-grid" data-carousel-track>
       {items.map((item) => (
         <figure>
           <img src={item.image} width={item.width} height={item.height} alt={item.alt} loading="eager" />
@@ -20,6 +21,7 @@ const items = [
         </figure>
       ))}
     </div>
+    <ResponsiveCarousel count={items.length} label="Possibilities" />
     <p class="disclaimer">Illustrative finishes — not completed Essex Rend projects.</p>
   </div>
 </section>
@@ -38,16 +40,16 @@ const items = [
     .possibilities { padding: 34px 0 50px; overflow: hidden; }
     .heading-rule { align-items: flex-end; gap: 12px; }
     h2 { max-width: 290px; font-size: var(--mobile-heading-font-size); }
-    .possibilities-grid { display: flex; gap: 16px; width: calc(100vw - max(20px, (100vw - 1560px) / 2)); margin: 30px 0 20px; padding-right: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+    .possibilities-grid { display: flex; gap: 16px; width: 100%; margin: 30px 0 0; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
     .possibilities-grid::-webkit-scrollbar { display: none; }
-    figure { width: min(76vw, 520px); flex: 0 0 min(76vw, 520px); scroll-snap-align: start; }
-    figure img { height: clamp(280px, 44vw, 430px); }
-    .disclaimer { max-width: 330px; font-size: var(--eyebrow-font-size); }
+    figure { flex: 0 0 calc((100% - 16px) / 2); scroll-snap-align: start; }
+    figure img { height: auto; aspect-ratio: .82; }
+    .disclaimer { max-width: 430px; margin-top: 20px; font-size: var(--eyebrow-font-size); }
   }
   @media (max-width: 480px) {
     .possibilities { padding-top: 30px; }
     h2 { font-size: var(--mobile-heading-font-size); }
-    figure { width: min(82vw, 345px); flex-basis: min(82vw, 345px); }
-    figure img { height: 350px; }
+    figure { flex-basis: 100%; }
+    figure img { height: auto; aspect-ratio: .8; }
   }
 </style>

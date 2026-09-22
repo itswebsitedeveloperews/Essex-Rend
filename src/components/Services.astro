@@ -1,6 +1,7 @@
 ---
 import Icon from "./Icon.astro";
 import ServiceIcon from "./ServiceIcon.astro";
+import ResponsiveCarousel from "./ResponsiveCarousel.astro";
 const services = [
   {
     title: "Silicon Render",
@@ -24,11 +25,11 @@ const services = [
 ---
 
 <section class="services" id="services" aria-labelledby="services-title">
-  <div class="container">
+  <div class="container" data-carousel>
     <p class="eyebrow">Our services</p>
     <h2 class="section-title" id="services-title">Expert solutions for every exterior.</h2>
     <p class="services-intro">High quality workmanship, durable materials and finishes designed to protect, enhance and add value to your property.</p>
-    <div class="service-grid">
+    <div class="service-grid" data-carousel-track>
       {services.map((service, index) => (
         <article class="service-card">
           <img src={service.image} width="1448" height="1086" alt={service.alt} loading="lazy" />
@@ -43,6 +44,7 @@ const services = [
         </article>
       ))}
     </div>
+    <ResponsiveCarousel count={services.length} label="Services" />
   </div>
 </section>
 
@@ -61,17 +63,19 @@ const services = [
   .service-body a { display: inline-flex; align-items: center; gap: 16px; color: var(--accent); font-size: var(--button-font-size); font-weight: 500; transition: color 180ms ease; }
   .service-body a:hover, .service-body a:focus-visible { color: var(--ink); }
   @media (max-width: 1024px) {
-    .service-grid { grid-template-columns: repeat(2, 1fr); }
+    .service-grid { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+    .service-grid::-webkit-scrollbar { display: none; }
+    .service-card { flex: 0 0 calc((100% - 16px) / 2); scroll-snap-align: start; }
+    .service-card img { aspect-ratio: 1.15; }
   }
   @media (max-width: 700px) {
     .services { padding: 54px 0; }
     .services-intro { font-size: var(--body-font-size); }
-    .service-grid { display: flex; gap: 16px; width: calc(100vw - 20px); overflow-x: auto; scroll-snap-type: x mandatory; margin-top: 30px; padding: 0 20px 12px 0; scrollbar-width: none; }
-    .service-grid::-webkit-scrollbar { display: none; }
-    .service-card { flex: 0 0 min(82vw, 350px); scroll-snap-align: start; }
+    .service-grid { width: 100%; margin-top: 30px; padding: 0; }
+    .service-card { flex-basis: 100%; }
+    .service-card img { aspect-ratio: 1.4; }
   }
   @media (max-width: 360px) {
-    .service-grid { width: calc(100vw - 20px); }
-    .service-card { flex-basis: 280px; }
+    .service-grid { width: 100%; }
   }
 </style>
